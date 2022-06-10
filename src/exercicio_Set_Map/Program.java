@@ -1,4 +1,4 @@
-package exercicio_Set;
+package exercicio_Set_Map;
 
 import java.util.HashSet;
 import java.util.Scanner;
