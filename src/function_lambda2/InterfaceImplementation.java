@@ -1,4 +1,4 @@
-package function_lambda;
+package function_lambda2;
 
 import java.util.ArrayList;
 import java.util.List;

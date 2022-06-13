@@ -27,36 +27,11 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	public static String staticUpperCase(Product p) {
-		return p.getName().toUpperCase();
-	}
-	
-	public String nonStaticUpperCase() {
-		return name.toUpperCase();
-	}
+
 
 	@Override
 	public String toString() {
 		return name + " - " + String.format("%.2f", price);	
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(name, price);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
-	}
-
 
 }
