@@ -75,7 +75,11 @@ public class Artista implements Serializable{
 		Artista other = (Artista) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Artista [id=" + id + ", nome=" + nome + ", nacionalidade=" + nacionalidade + ", albuns=" + albuns
+				+ ", musicas=" + musicas + "]";
+	}	
 
 }

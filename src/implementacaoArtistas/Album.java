@@ -57,6 +57,14 @@ public class Album implements Serializable {
 	public List<Musica> getMusicas() {
 		return musicas;
 	}
+	
+	public void addMusica(Musica musica) {
+		musicas.add(musica);
+	}
+	
+	public void addParticipantes(Artista artista) {
+		participantes.add(artista);
+	}
 
 	@Override
 	public int hashCode() {
@@ -74,6 +82,13 @@ public class Album implements Serializable {
 		Album other = (Album) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		return "Album [id=" + id + ", nome=" + nome + ", ano=" + ano + ", participantes=" + participantes + ", musicas="
+				+ musicas + "]";
+	}
+	
 	
 	
 }
