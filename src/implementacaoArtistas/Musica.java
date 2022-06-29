@@ -1,6 +1,8 @@
 package implementacaoArtistas;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Musica implements Serializable{
@@ -10,6 +12,10 @@ public class Musica implements Serializable{
 	private Integer id;
 	private String nome;
 	private Integer duracao;
+	
+	private List<Artista> interpretes = new ArrayList<>();
+	private List<Artista> autores = new ArrayList<>();
+	private List<Album> albuns = new ArrayList<>();
 	
 	public Musica() {
 	}
@@ -43,6 +49,18 @@ public class Musica implements Serializable{
 
 	public void setDuracao(Integer duracao) {
 		this.duracao = duracao;
+	}
+
+	public List<Artista> getInterpretes() {
+		return interpretes;
+	}
+
+	public List<Artista> getAutores() {
+		return autores;
+	}
+
+	public List<Album> getAlbuns() {
+		return albuns;
 	}
 
 	@Override

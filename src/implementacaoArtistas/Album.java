@@ -1,15 +1,20 @@
 package implementacaoArtistas;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Album implements Serializable{
+public class Album implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String nome;
 	private Integer ano;
+	
+	private List<Artista> participantes = new ArrayList<>();
+	private List<Musica> musicas = new ArrayList<>();
 	
 	public Album(){
 	}
@@ -43,6 +48,14 @@ public class Album implements Serializable{
 
 	public void setAno(Integer ano) {
 		this.ano = ano;
+	}
+	
+	public List<Artista> getParticipantes() {
+		return participantes;
+	}
+
+	public List<Musica> getMusicas() {
+		return musicas;
 	}
 
 	@Override

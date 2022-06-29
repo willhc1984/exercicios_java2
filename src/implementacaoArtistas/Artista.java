@@ -1,6 +1,7 @@
 package implementacaoArtistas;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,7 +13,8 @@ public class Artista implements Serializable{
 	private String nome;
 	private String nacionalidade;
 	
-	private List<Album> albuns;
+	private List<Album> albuns = new ArrayList<>();
+	private List<Musica> musicas = new ArrayList<>();
 	
 	public Artista() {
 	}
@@ -50,6 +52,11 @@ public class Artista implements Serializable{
 
 	public List<Album> getAlbuns() {
 		return albuns;
+	}
+	
+
+	public List<Musica> getMusicas() {
+		return musicas;
 	}
 
 	@Override
