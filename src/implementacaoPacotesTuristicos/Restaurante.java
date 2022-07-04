@@ -1,6 +1,8 @@
 package implementacaoPacotesTuristicos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Restaurante implements Serializable{
@@ -9,7 +11,9 @@ public class Restaurante implements Serializable{
 	private Integer id;
 	private String nome;
 	private Double valorRefeicao;
+	
 	private Cidade cidade;
+	private List<PacoteTuristico> pacotes = new ArrayList<>();
 	
 	public Restaurante() {
 	}
@@ -53,6 +57,14 @@ public class Restaurante implements Serializable{
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+	
+	public List<PacoteTuristico> getPacotes() {
+		return pacotes;
+	}
+	
+	public void addPacotes(PacoteTuristico pacote) {
+		pacotes.add(pacote);
+	}
 
 	@Override
 	public int hashCode() {
@@ -82,6 +94,11 @@ public class Restaurante implements Serializable{
 		sb.append(valorRefeicao + "\n");
 		sb.append("Cidade: ");
 		sb.append(cidade.getNome() + "\n");
+		sb.append("Data de viagem: ");
+		sb.append("\n");
+		for(PacoteTuristico p : pacotes) {
+			sb.append(p.getDataViagem());
+		}
 		
 		return sb.toString();
 	}

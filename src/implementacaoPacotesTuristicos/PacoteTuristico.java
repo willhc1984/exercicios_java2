@@ -2,7 +2,9 @@ package implementacaoPacotesTuristicos;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class PacoteTuristico implements Serializable{
@@ -14,18 +16,23 @@ public class PacoteTuristico implements Serializable{
 	private Date dataViagem;
 	private Integer diasPermanencia;
 	private Integer refeicoesPorDia;
+	
 	private Cidade cidade;
+	private Restaurante restaurante;
+	private Hotel hotel;
 	
 	public PacoteTuristico() {
 	}
 
-	public PacoteTuristico(Integer id, Date dataViagem, Integer diasPermanencia, Integer refeicoesPorDia, Cidade cidade) {
+	public PacoteTuristico(Integer id, Date dataViagem, Integer diasPermanencia, Integer refeicoesPorDia, Cidade cidade, Restaurante restaurante, Hotel hotel) {
 		super();
 		this.id = id;
 		this.dataViagem = dataViagem;
 		this.diasPermanencia = diasPermanencia;
 		this.refeicoesPorDia = refeicoesPorDia;
 		this.cidade = cidade;
+		this.restaurante = restaurante;
+		this.hotel = hotel;
 	}
 
 	public Integer getId() {
@@ -67,6 +74,22 @@ public class PacoteTuristico implements Serializable{
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+	
+	public Restaurante getRestaurante() {
+		return restaurante;
+	}
+
+	public void setRestaurante(Restaurante restaurante) {
+		this.restaurante = restaurante;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
 
 	@Override
 	public int hashCode() {
@@ -98,6 +121,10 @@ public class PacoteTuristico implements Serializable{
 		sb.append(refeicoesPorDia + "\n");
 		sb.append("Cidade: ");
 		sb.append(cidade.getNome() + "\n");
+		sb.append("Restaurante: ");
+		sb.append(restaurante.getNome() + "\n");
+		sb.append("Hotel: ");
+		sb.append(hotel.getNome() + "\n");
 		return sb.toString();
 	}
 	
