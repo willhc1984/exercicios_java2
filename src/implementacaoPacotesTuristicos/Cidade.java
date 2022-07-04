@@ -1,7 +1,10 @@
 package implementacaoPacotesTuristicos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 
 public class Cidade implements Serializable{
 	
@@ -10,6 +13,8 @@ public class Cidade implements Serializable{
 	private String nome;
 	private String estado;
 	private String website;
+	
+	private List<Hotel> hoteis = new ArrayList<>();
 	
 	public Cidade() {
 	}
@@ -54,6 +59,14 @@ public class Cidade implements Serializable{
 		this.website = website;
 	}
 
+	public List<Hotel> getHoteis() {
+		return hoteis;
+	}
+	
+	public void addHotel(Hotel hotel) {
+		hoteis.add(hotel);
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -73,9 +86,24 @@ public class Cidade implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", nome=" + nome + ", estado=" + estado + ", website=" + website + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("ID: ");
+		sb.append(id + "\n");
+		sb.append("Nome: ");
+		sb.append(nome + "\n");
+		sb.append("Estado: ");
+		sb.append(estado + "\n");
+		sb.append("Website: ");
+		sb.append(website + "\n");
+		sb.append("Hotéis: ");
+		for(Hotel h : hoteis) {
+			sb.append(h.getNome() + " - ");
+		}
+		
+		return sb.toString();
+		
 	}
-	
+
 	
 
 }

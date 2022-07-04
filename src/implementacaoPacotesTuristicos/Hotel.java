@@ -10,14 +10,17 @@ public class Hotel implements Serializable{
 	private String nome;
 	private Double valorDiaria;
 	
+	private Cidade cidade;
+	
 	public Hotel() {
 	}
 
-	public Hotel(Integer id, String nome, Double valorDiaria) {
+	public Hotel(Integer id, String nome, Double valorDiaria, Cidade cidade) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.valorDiaria = valorDiaria;
+		this.cidade = cidade;
 	}
 
 	public Integer getId() {
@@ -44,6 +47,14 @@ public class Hotel implements Serializable{
 		this.valorDiaria = valorDiaria;
 	}
 
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -63,8 +74,18 @@ public class Hotel implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Hotel [id=" + id + ", nome=" + nome + ", valorDiaria=" + valorDiaria + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("ID: ");
+		sb.append(id + "\n");
+		sb.append("Nome: ");
+		sb.append(nome + "\n");
+		sb.append("Valor da Diária: ");
+		sb.append(valorDiaria + "\n");
+		sb.append("Cidade: ");
+		sb.append(cidade.getNome() + "\n");
+		
+		return sb.toString();
 	}
-
-
+	
+	
 }
