@@ -9,15 +9,17 @@ public class Restaurante implements Serializable{
 	private Integer id;
 	private String nome;
 	private Double valorRefeicao;
+	private Cidade cidade;
 	
 	public Restaurante() {
 	}
 
-	public Restaurante(Integer id, String nome, Double valorRefeicao) {
+	public Restaurante(Integer id, String nome, Double valorRefeicao, Cidade cidade) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.valorRefeicao = valorRefeicao;
+		this.cidade = cidade;
 	}
 
 	public Integer getId() {
@@ -44,6 +46,14 @@ public class Restaurante implements Serializable{
 		this.valorRefeicao = valorRefeicao;
 	}
 
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -63,7 +73,17 @@ public class Restaurante implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Restaurante [id=" + id + ", nome=" + nome + ", valorRefeicao=" + valorRefeicao + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("ID: ");
+		sb.append(id + "\n");
+		sb.append("Nome: ");
+		sb.append(nome + "\n");
+		sb.append("Valor da Refeição: ");
+		sb.append(valorRefeicao + "\n");
+		sb.append("Cidade: ");
+		sb.append(cidade.getNome() + "\n");
+		
+		return sb.toString();
 	}
 	
 }

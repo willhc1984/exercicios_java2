@@ -15,6 +15,7 @@ public class Cidade implements Serializable{
 	private String website;
 	
 	private List<Hotel> hoteis = new ArrayList<>();
+	private List<Restaurante> restaurantes = new ArrayList<>();
 	
 	public Cidade() {
 	}
@@ -63,6 +64,14 @@ public class Cidade implements Serializable{
 		return hoteis;
 	}
 	
+	public List<Restaurante> getRestaurantes() {
+		return restaurantes;
+	}
+
+	public void addRestaurante(Restaurante restaurante) {
+		restaurantes.add(restaurante);
+	}
+
 	public void addHotel(Hotel hotel) {
 		hoteis.add(hotel);
 	}
@@ -98,6 +107,11 @@ public class Cidade implements Serializable{
 		sb.append("Hotéis: ");
 		for(Hotel h : hoteis) {
 			sb.append(h.getNome() + " - ");
+		}
+		sb.append("\n");
+		sb.append("Restaurantes: ");
+		for(Restaurante r : restaurantes) {
+			sb.append(r.getNome() + " - ");
 		}
 		
 		return sb.toString();
