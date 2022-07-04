@@ -16,6 +16,7 @@ public class Cidade implements Serializable{
 	
 	private List<Hotel> hoteis = new ArrayList<>();
 	private List<Restaurante> restaurantes = new ArrayList<>();
+	private List<PacoteTuristico> pacotes = new ArrayList<>();
 	
 	public Cidade() {
 	}
@@ -68,12 +69,20 @@ public class Cidade implements Serializable{
 		return restaurantes;
 	}
 
+	public List<PacoteTuristico> getPacotes() {
+		return pacotes;
+	}
+
 	public void addRestaurante(Restaurante restaurante) {
 		restaurantes.add(restaurante);
 	}
 
 	public void addHotel(Hotel hotel) {
 		hoteis.add(hotel);
+	}
+	
+	public void addPacote(PacoteTuristico pacote) {
+		pacotes.add(pacote);
 	}
 
 	@Override
@@ -96,6 +105,7 @@ public class Cidade implements Serializable{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("\n");
 		sb.append("ID: ");
 		sb.append(id + "\n");
 		sb.append("Nome: ");
@@ -112,6 +122,17 @@ public class Cidade implements Serializable{
 		sb.append("Restaurantes: ");
 		for(Restaurante r : restaurantes) {
 			sb.append(r.getNome() + " - ");
+		}
+		
+		sb.append("\n\n");
+		
+		sb.append("Pacotes vendidos: ");
+		sb.append("\n");
+		sb.append("ID do pacote: ");
+		sb.append(id + " - ");
+		sb.append("Data de Viagem: ");
+		for(PacoteTuristico p : pacotes) {
+			sb.append(p.getDataViagem() + " - ");
 		}
 		
 		return sb.toString();

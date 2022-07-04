@@ -1,5 +1,7 @@
 package implementacaoPacotesTuristicos;
 
+import java.util.Date;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -30,6 +32,14 @@ public class Program {
 		cidade2.addRestaurante(r1);
 		cidade2.addRestaurante(r2);
 		
+		PacoteTuristico p1 = new PacoteTuristico(1, new Date(), 3, 4, cidade1);
+		PacoteTuristico p2 = new PacoteTuristico(1, new Date(), 3, 4, cidade2);
+		PacoteTuristico p3 = new PacoteTuristico(1, new Date(), 3, 4, cidade2);
+		
+		cidade2.addPacote(p3);
+		cidade2.addPacote(p2);
+		cidade1.addPacote(p1);
+		
 		System.out.println(cidade1);
 		System.out.println(cidade2);
 		System.out.println();
@@ -42,6 +52,10 @@ public class Program {
 		System.out.println(r2);
 		System.out.println(r3);
 		System.out.println(r4);
+		
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
 	}
 
 }

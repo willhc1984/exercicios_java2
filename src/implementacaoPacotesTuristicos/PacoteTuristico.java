@@ -1,26 +1,31 @@
 package implementacaoPacotesTuristicos;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Pacote implements Serializable{
+public class PacoteTuristico implements Serializable{
+	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Date dataViagem;
 	private Integer diasPermanencia;
 	private Integer refeicoesPorDia;
+	private Cidade cidade;
 	
-	public Pacote() {
+	public PacoteTuristico() {
 	}
 
-	public Pacote(Integer id, Date dataViagem, Integer diasPermanencia, Integer refeicoesPorDia) {
+	public PacoteTuristico(Integer id, Date dataViagem, Integer diasPermanencia, Integer refeicoesPorDia, Cidade cidade) {
 		super();
 		this.id = id;
 		this.dataViagem = dataViagem;
 		this.diasPermanencia = diasPermanencia;
 		this.refeicoesPorDia = refeicoesPorDia;
+		this.cidade = cidade;
 	}
 
 	public Integer getId() {
@@ -55,6 +60,14 @@ public class Pacote implements Serializable{
 		this.refeicoesPorDia = refeicoesPorDia;
 	}
 
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -68,14 +81,24 @@ public class Pacote implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pacote other = (Pacote) obj;
+		PacoteTuristico other = (PacoteTuristico) obj;
 		return Objects.equals(id, other.id);
 	}
 
 	@Override
 	public String toString() {
-		return "Pacote [id=" + id + ", dataViagem=" + dataViagem + ", diasPermanencia=" + diasPermanencia
-				+ ", refeicoesPorDia=" + refeicoesPorDia + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("ID: ");
+		sb.append(id + "\n");
+		sb.append("Data da viagem: ");
+		sb.append(sdf.format(dataViagem) + "\n");
+		sb.append("Dias de permanencia: ");
+		sb.append(diasPermanencia + "\n");
+		sb.append("Refeições por dia: ");
+		sb.append(refeicoesPorDia + "\n");
+		sb.append("Cidade: ");
+		sb.append(cidade.getNome() + "\n");
+		return sb.toString();
 	}
 	
 
