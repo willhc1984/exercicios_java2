@@ -36,6 +36,10 @@ public class Program {
 		PacoteTuristico p2 = new PacoteTuristico(1, new Date(), 3, 4, cidade2);
 		PacoteTuristico p3 = new PacoteTuristico(1, new Date(), 3, 4, cidade2);
 		
+		hotel4.addPacoteTuristico(p1);
+		hotel2.addPacoteTuristico(p3);
+		hotel2.addPacoteTuristico(p2);
+		
 		cidade2.addPacote(p3);
 		cidade2.addPacote(p2);
 		cidade1.addPacote(p1);

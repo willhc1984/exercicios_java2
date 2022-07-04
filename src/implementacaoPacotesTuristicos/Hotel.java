@@ -1,6 +1,8 @@
 package implementacaoPacotesTuristicos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Hotel implements Serializable{
@@ -11,6 +13,7 @@ public class Hotel implements Serializable{
 	private Double valorDiaria;
 	
 	private Cidade cidade;
+	private List<PacoteTuristico> pacotes = new ArrayList<>();
 	
 	public Hotel() {
 	}
@@ -51,10 +54,18 @@ public class Hotel implements Serializable{
 		return cidade;
 	}
 
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
+	public List<PacoteTuristico> getPacotes() {
+		return pacotes;
 	}
 
+	public void setPacotes(List<PacoteTuristico> pacotes) {
+		this.pacotes = pacotes;
+	}
+	
+	public void addPacoteTuristico(PacoteTuristico pacoteTuristico) {
+		pacotes.add(pacoteTuristico);
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -83,6 +94,11 @@ public class Hotel implements Serializable{
 		sb.append(valorDiaria + "\n");
 		sb.append("Cidade: ");
 		sb.append(cidade.getNome() + "\n");
+		for(PacoteTuristico p : pacotes) {
+			sb.append(p.getCidade() + "\n");
+			sb.append(p.getDataViagem() + "\n");
+		}
+		
 		
 		return sb.toString();
 	}
