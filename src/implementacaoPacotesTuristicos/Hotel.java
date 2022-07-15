@@ -13,7 +13,7 @@ public class Hotel implements Serializable{
 	private Double valorDiaria;
 	
 	private Cidade cidade;
-	private List<PacoteTuristico> pacotes = new ArrayList<>();
+	private List<Pacote> pacotes = new ArrayList<>();
 	
 	public Hotel() {
 	}
@@ -54,15 +54,15 @@ public class Hotel implements Serializable{
 		return cidade;
 	}
 
-	public List<PacoteTuristico> getPacotes() {
+	public List<Pacote> getPacotes() {
 		return pacotes;
 	}
 
-	public void setPacotes(List<PacoteTuristico> pacotes) {
+	public void setPacotes(List<Pacote> pacotes) {
 		this.pacotes = pacotes;
 	}
 	
-	public void addPacoteTuristico(PacoteTuristico pacoteTuristico) {
+	public void addPacoteTuristico(Pacote pacoteTuristico) {
 		pacotes.add(pacoteTuristico);
 	}
 	
@@ -94,7 +94,7 @@ public class Hotel implements Serializable{
 		sb.append(valorDiaria + "\n");
 		sb.append("Cidade: ");
 		sb.append(cidade.getNome() + "\n");
-		for(PacoteTuristico p : pacotes) {
+		for(Pacote p : pacotes) {
 			sb.append(p.getCidade() + "\n");
 			sb.append(p.getDataViagem() + "\n");
 		}

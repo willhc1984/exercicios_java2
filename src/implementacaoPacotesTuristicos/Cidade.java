@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 public class Cidade implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -16,7 +15,7 @@ public class Cidade implements Serializable{
 	
 	private List<Hotel> hoteis = new ArrayList<>();
 	private List<Restaurante> restaurantes = new ArrayList<>();
-	private List<PacoteTuristico> pacotes = new ArrayList<>();
+	private List<Pacote> pacotes = new ArrayList<>();
 	
 	public Cidade() {
 	}
@@ -69,7 +68,7 @@ public class Cidade implements Serializable{
 		return restaurantes;
 	}
 
-	public List<PacoteTuristico> getPacotes() {
+	public List<Pacote> getPacotes() {
 		return pacotes;
 	}
 
@@ -81,7 +80,7 @@ public class Cidade implements Serializable{
 		hoteis.add(hotel);
 	}
 	
-	public void addPacote(PacoteTuristico pacote) {
+	public void addPacote(Pacote pacote) {
 		pacotes.add(pacote);
 	}
 
@@ -131,7 +130,7 @@ public class Cidade implements Serializable{
 		sb.append("ID do pacote: ");
 		sb.append(id + " - ");
 		sb.append("Data de Viagem: ");
-		for(PacoteTuristico p : pacotes) {
+		for(Pacote p : pacotes) {
 			sb.append(p.getDataViagem() + " - ");
 		}
 		

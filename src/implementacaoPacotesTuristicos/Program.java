@@ -32,9 +32,9 @@ public class Program {
 		cidade2.addRestaurante(r1);
 		cidade2.addRestaurante(r2);
 		
-		PacoteTuristico p1 = new PacoteTuristico(1, new Date(), 3, 4, cidade1, r1, hotel1);
-		PacoteTuristico p2 = new PacoteTuristico(1, new Date(), 3, 4, cidade2, r2, hotel3);
-		PacoteTuristico p3 = new PacoteTuristico(1, new Date(), 3, 4, cidade2, r3, hotel5);
+		Pacote p1 = new Pacote(1, new Date(), 3, 4, cidade1, r1, hotel1);
+		Pacote p2 = new Pacote(1, new Date(), 3, 4, cidade2, r2, hotel3);
+		Pacote p3 = new Pacote(1, new Date(), 3, 4, cidade2, r3, hotel5);
 		
 		hotel4.addPacoteTuristico(p1);
 		hotel2.addPacoteTuristico(p3);
