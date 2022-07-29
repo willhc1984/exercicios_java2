@@ -1,5 +1,7 @@
 package tratamento_excecoes;
 
+import javax.management.RuntimeErrorException;
+
 public class Account {
 	
 	private Integer number;
@@ -50,19 +52,22 @@ public class Account {
 		this.withDrawLimit = withDrawLimit;
 	}
 	
-	public String withdraw(double amount) {
-		if(amount > withDrawLimit) {
-			return "Sem limite para saque!";
-		}
-		if(amount > balance) {
-			return "Sem saldo para saque!";
-		}
+	public void withdraw(double amount) {
+		validateWithDraw(amount);
 		balance -= amount;
-		return "Saque realizado!";
 	}
 	
 	public void deposit(double amount) {
 		balance += amount;
+	}
+	
+	private void validateWithDraw(double amount) {
+		if(amount > getWithDrawLimit()) {
+			throw new BusinessException("Sem limite de saque!");
+		}
+		if(amount > getBalance()) {
+			throw new BusinessException("Saldo insuficiente!");
+		}
 	}
 
 	@Override

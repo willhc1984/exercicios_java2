@@ -28,9 +28,24 @@ public class Program {
 		System.out.println("Informe a quantia para sacar: ");
 		double withdraw = sc.nextDouble();
 		
-		System.out.println(ac1.withdraw(withdraw));
+		try {
+			ac1.withdraw(withdraw);
+		} catch (BusinessException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		
 		System.out.println("Saldo atual: " + ac1.getBalance());
+		
+		/*
+		 * String error = ac1.validateWithDraw(withdraw); if(error != null) {
+		 * System.out.println(error); System.out.println("Saldo atual: " +
+		 * ac1.getBalance()); System.out.println("Limit de saque: " +
+		 * ac1.getWithDrawLimit()); } else { ac1.withdraw(withdraw);
+		 * System.out.println("Saldo atual: " + ac1.getBalance()); }
+		 */
+		
+		sc.close();
 
 	}
 
