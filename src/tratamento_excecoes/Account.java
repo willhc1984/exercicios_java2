@@ -50,6 +50,35 @@ public class Account {
 		this.withDrawLimit = withDrawLimit;
 	}
 	
+	public String withdraw(double amount) {
+		if(amount > withDrawLimit) {
+			return "Sem limite para saque!";
+		}
+		if(amount > balance) {
+			return "Sem saldo para saque!";
+		}
+		balance -= amount;
+		return "Saque realizado!";
+	}
+	
+	public void deposit(double amount) {
+		balance += amount;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Account [number=");
+		builder.append(number);
+		builder.append(", holder=");
+		builder.append(holder);
+		builder.append(", balance=");
+		builder.append(balance);
+		builder.append(", withDrawLimit=");
+		builder.append(withDrawLimit);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 
 }
