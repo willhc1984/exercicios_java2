@@ -2,13 +2,13 @@ package listaEncadeada;
 
 public class Node {
 	
-	private Double value;
+	private Object value;
 	private Node next;
 	
-	public Double getValue() {
+	public Object getValue() {
 		return value;
 	}
-	public void setValue(Double value) {
+	public void setValue(Object value) {
 		this.value = value;
 	}
 	public Node getNext() {

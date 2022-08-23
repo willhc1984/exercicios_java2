@@ -1,11 +1,11 @@
 package listaEncadeada;
 
-public class List {
+public class ListGenerics<T> {
 	
-	private Node head;
+	private NodeGenerics<T> head;
 	
-	public void add(Object value) {
-		Node node = new Node();
+	public void add(T value) {
+		NodeGenerics<T> node = new NodeGenerics<T>();
 		node.setValue(value);
 		node.setNext(head);
 		head = node;
@@ -15,7 +15,7 @@ public class List {
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("[");
-		Node p = head;
+		NodeGenerics<T> p = head;
 		while(p != null) {
 			sb.append(p.getValue() + " ");
 			p = p.getNext();
