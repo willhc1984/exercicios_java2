@@ -1,7 +1,5 @@
 package function_lambda;
 
-import java.util.Objects;
-
 public class Product {
 	
 	private String name;
